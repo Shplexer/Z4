@@ -1,24 +1,9 @@
-#include <iostream>
-#include <string>
-#include <map>
-#include <vector>
-
 #include "functions.h"
 #include "interface.h"
-#include "fileIO.h"
-
-using std::cin;
-using std::cout;
-using std::endl;
-
-    //пюгахрэ бяе б нрдекэмше тсмйжхх! - ядекюмн
-    //ядекюрэ дпюибеп йндю - 
-    //ядекюрэ опнбепйх ббндю input х осярни ярпнйх - ядекюмн
-    //ядекюрэ ббнд хг тюикю - онвхмхрэ fileMenuChoice::exit  
-    //ядекюрэ янупюмемхе б тюик - яДЕКЮМН
-    //ме слеперэ
 
 int main() {
+    //std::string s{ "Peter Pip{4,2} picked a {9,2}{15,2} of {13,4}l{17,2} {9,2}p{9,3}s" };
+    //decrypt(s);
     giveGreeting();
     launchAll(false);
     return 0;

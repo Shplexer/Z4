@@ -8,4 +8,4 @@ using std::endl;
 void giveGreeting();
 void giveMainMenu();
 void givePostParseMenu();
-void giveResult(std::string srcString, std::string parsedString);
+void giveResult(std::string initialString, std::string parsedString);

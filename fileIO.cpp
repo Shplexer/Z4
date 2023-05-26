@@ -2,10 +2,9 @@
 #include "functions.h"
 #include <tuple>
 
-std::tuple<std::string, bool> openFile() {
+std::string openFile() {
 	std::ifstream fileIn;
 	bool exitFlag = false;
-	bool returnExit = false;
 	fileNameChoice choice;
 	cout << "Enter the name of a source file: ";
 	std::string fileName = stringInput();
@@ -18,15 +17,15 @@ std::tuple<std::string, bool> openFile() {
 				<< "1. Change the name of the file" << endl
 				<< "2. Exit" << endl;
 			choice = static_cast<fileNameChoice>(checkInputInt());
-			switch (choice)
-			{
+
+			switch (choice) {
 			case fileNameChoice::change:
 				cout << "Enter the name of a source file: ";
 				fileName = fileNameCheck(stringInput());
 				break;
 			case fileNameChoice::exit:
 				cout << "Exiting..." << endl;
-				returnExit = false;
+				fileName.clear();
 				exitFlag = true;
 				break;
 			default:
@@ -38,12 +37,11 @@ std::tuple<std::string, bool> openFile() {
 			cout << "Your file is open!" << endl;
 			//cout << fileName;
 			exitFlag = true;
-			returnExit = true;
 		}
 	} while (!exitFlag);
 	fileIn.close();
 
-	return std::make_tuple(fileName, returnExit);
+	return fileName;
 }
 
 //проверка корректности введенного названия файла
@@ -81,28 +79,31 @@ std::string fileNameCheck(std::string inputName) {
 
 	return inputName;
 }
-
+const std::string brackL{ "{" };
+const std::string brackR{ "}" };
+const std::string comma{ "," };
 //прием и разбитие ввода из файла на массив строк и сборка одной целой строки
-std::string setSrcString(std::vector<std::string>& lines, std::string fileName) {
-	std::string s;
+std::string setInitialString(std::string fileName) {
+	std::string initialString;
 	std::ifstream fileIn(fileName);
 	do {
 		std::string temp;
 		std::getline(fileIn, temp);
+
 		if (!temp.empty()) {
 			//разбитие всего ввода на все строки 
-			lines.push_back(temp);
-			s += temp + '\n';
+			initialString += temp + '\n';
 		}
-		if (s.empty()) {
+		if (initialString.empty()) {
 			cout << "ERR. An empty string has been entered. Try again: " << endl;
 		}
 		if (fileIn.eof())
 			break;
 	} while (true);
+	fileIn.close();
 	//cout << s << endl;
 	//cout << "==============" << endl;
-	return s;
+	return initialString;
 }
 
 std::string saveFileCheck(std::string saveFileName) {

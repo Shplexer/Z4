@@ -1,4 +1,4 @@
-Peter Piper picked a peck of pickled peppers
-A peck of pickled peppers Peter Piper picked
-If Peter Piper picked a peck of pickled peppers
-Where's the peck of pickled peppers Peter Piper picked?
+Peter Pip{4,2} picked a {9,2}{15,2} of {13,4}l{17,2} {9,2}p{9,3}s
+A {22,4} {27,2} {30,7} {38,7} {1,5} {7,5} {13,6}
+If {1,5} {7,5} {13,6} a {22,4} {27,2} {30,7} {38,7}
+Wh{4,2}e's t{140,2} {22,4} {27,2} {30,7} {38,7} {1,5} {7,5} {13,6}?

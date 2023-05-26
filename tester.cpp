@@ -1,5 +1,6 @@
 #include "tester.h"
 #include "functions.h"
+
 void launchTest() {
 	std::string testString = launchAll(true);
 	cout << "Substring replacer: ";

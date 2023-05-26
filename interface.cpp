@@ -2,7 +2,7 @@
 
 void giveGreeting() {
 	cout << "===================================================================================================================" << endl;
-	cout << "Welcome!" << endl << "Made by Orekhov Daniil, group 423, task #4, variant 15" << endl;
+	cout << "Welcome!" << endl << "Made by Orekhov Daniil, group 423, task #4, variant 6" << endl;
 	cout << "===================================================================================================================" << endl;
 	cout << "Task: Develop a program that finds al repeating substrings in a given string that are more or equal to the input number" << endl <<
 		"Replace all repeating substrings, except for the first one with a special signature:" << endl <<
@@ -26,11 +26,11 @@ void givePostParseMenu() {
 	cout << "===================================================================================================================" << endl;
 }
 
-void giveResult(std::string srcString, std::string parsedString) {
+void giveResult(std::string initialString, std::string parsedString) {
 	cout << "===================================================================================================================" << endl;
 	cout << "Input string: " << endl;
 	cout << "===================================================================================================================" << endl;
-	cout << srcString << endl;
+	cout << initialString << endl;
 	cout << "===================================================================================================================" << endl;
 	cout << "Parsed string: " << endl;
 	cout << "===================================================================================================================" << endl;
